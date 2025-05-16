@@ -1,0 +1,30 @@
+name: SlashFling
+main: com.milhae77.slashfling.SlashFlingPlugin
+version: 1.1
+description: Fling players to the sky with fall damage resistance
+api-version: 1.21
+author: milhae77
+
+commands:
+  fling:
+    description: Fling a player into the sky with fall damage resistance
+    usage: /<command> <player>
+    permission: slashfling.use
+    aliases: [launch, toss]
+
+permissions:
+  slashfling.use:
+    description: Allows using the /fling command
+    default: op
+  slashfling.admin:
+    description: Grants all SlashFling admin permissions
+    default: op
+    children:
+      slashfling.use: true
+      slashfling.nocooldown: true
+  slashfling.immune:
+    description: Prevents the player from being flung by non-admins
+    default: false
+  slashfling.nocooldown:
+    description: Exempts the player from command cooldowns
+    default: false
